@@ -15,7 +15,7 @@ while tries < 7 :
             continue
     except ValueError:
         print("Oops, you must enter a number in digits!")
-        break
+        continue
 
     tries+=1
 
