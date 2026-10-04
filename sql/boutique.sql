@@ -1,5 +1,8 @@
+DROP TABLE IF EXISTS commandes;
+DROP TABLE IF EXISTS clients;
+
 CREATE TABLE public.clients (
-	id serial4 NOT NULL,
+	id SERIAL NOT NULL,
 	nom varchar(100) NOT NULL,
 	email varchar(150) NULL,
 	ville varchar(100) NULL,
@@ -11,8 +14,8 @@ CREATE TABLE public.clients (
 
 
 CREATE TABLE public.commandes (
-	id serial4 NOT NULL,
-	client_id int4 NOT NULL,
+	id SERIAL NOT NULL,
+	client_id INTEGER NOT NULL,
 	produit varchar(100) NOT NULL,
 	montant numeric(10, 2) NOT NULL,
 	commande_le date DEFAULT CURRENT_DATE NULL,
@@ -20,20 +23,20 @@ CREATE TABLE public.commandes (
 	CONSTRAINT commandes_client_id_fkey FOREIGN KEY (client_id) REFERENCES public.clients(id)
 );
 
-INSERT INTO public.clients (nom,email,ville,inscrit_le) VALUES
-	 ('Antoine Coroller','antoine@exemple.com','Rennes','2026-09-22'),
-	 ('Marie Dupont','marie@exemple.com','Rennes','2026-09-22'),
-	 ('Karim Benali','karim@exemple.com','Lausanne','2026-09-22'),
-	 ('Sophie Martin','sophie@exemple.com','Monaco','2026-09-22'),
-	 ('Lucas Petit','lucas@exemple.com','Lausanne','2026-09-22');
+INSERT INTO public.clients (nom,email,ville) VALUES
+	 ('Antoine Coroller','antoine@exemple.com','Rennes'),
+	 ('Marie Dupont','marie@exemple.com','Rennes'),
+	 ('Karim Benali','karim@exemple.com','Lausanne'),
+	 ('Sophie Martin','sophie@exemple.com','Monaco'),
+	 ('Lucas Petit','lucas@exemple.com','Lausanne');
 
 
-INSERT INTO public.commandes (client_id,produit,montant,commande_le) VALUES
-	 (1,'Clavier',49.90,'2026-09-23'),
-	 (1,'Écran 27"',279.00,'2026-09-23'),
-	 (2,'Souris',25.50,'2026-09-23'),
-	 (3,'Ordinateur',1199.00,'2026-09-23'),
-	 (3,'Casque',89.90,'2026-09-23'),
+INSERT INTO public.commandes (client_id,produit,montant) VALUES
+	 (1,'Clavier',49.90),
+	 (1,'Écran 27"',279.00),
+	 (2,'Souris',25.50),
+	 (3,'Ordinateur',1199.00),
+	 (3,'Casque',89.90),
 	 (4,'Webcam',59.00,'2026-09-23');
 
 
