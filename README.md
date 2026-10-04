@@ -8,7 +8,7 @@ vers un poste Data.
 | Fichier | Description |
 |---|---|
 | `bonjour.py` | Saisie utilisateur et validation d'entrées (try/except, boucles) |
-| `nombre_mystere.py` | Jeu de devinette — recherche dichotomique, gestion d'erreurs |
+| `mysterious_number.py` | Jeu de devinette — recherche dichotomique, gestion d'erreurs |
 | `sql/boutique.sql` | Modèle relationnel d'une boutique et requêtes d'analyse |
 
 ## Base de données `boutique`
