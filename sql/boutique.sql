@@ -54,7 +54,7 @@ JOIN commandes cmd ON cmd.client_id = c.id
 GROUP BY c.ville 
 ORDER BY montant_total_ville DESC;
 
--- Requête 4 : le montant moyen d'une commande (💡 AVG, et ROUND(AVG(montant), 2) pour arrondir)
+-- Requête 4 : le montant moyen d'une commande (AVG, et ROUND(AVG(montant), 2) pour arrondir)
 SELECT
 	ROUND(AVG(montant), 2) AS montant_moyen
 FROM
